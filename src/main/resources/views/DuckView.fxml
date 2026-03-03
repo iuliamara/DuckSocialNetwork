@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="com.ubb.gui.DuckController"
+      xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/21"
+      alignment="TOP_CENTER" spacing="10.0" >
+
+    <HBox alignment="CENTER" spacing="10.0">
+        <Button text="Reincarca Date" onAction="#handleRefresh"/>
+        <Label text="Filtrează după Tip:"/>
+        <ComboBox fx:id="filterComboBox" onAction="#handleFilterChange"/>
+    </HBox>
+
+    <TableView fx:id="duckTableView" VBox.vgrow="ALWAYS">
+    </TableView>
+
+</VBox>

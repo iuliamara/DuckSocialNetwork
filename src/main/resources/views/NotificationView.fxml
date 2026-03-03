@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ubb.gui.NotificationController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+
+    <Label text="Centrul de Notificari">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+        <VBox.margin>
+            <Insets bottom="10.0" />
+        </VBox.margin>
+    </Label>
+
+    <ListView fx:id="notificationListView" VBox.vgrow="ALWAYS" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
+
+    <Label text="Sfat: Apasati pe o cerere pentru a vedea profilul si a lua o decizie."
+           textFill="#7f8c8d" style="-fx-font-size: 11px; -fx-font-style: italic;">
+        <VBox.margin>
+            <Insets top="5.0" />
+        </VBox.margin>
+    </Label>
+</VBox>

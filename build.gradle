@@ -1,0 +1,61 @@
+// Aplică pluginurile esențiale
+plugins {
+    id 'application' // Permite task-ul 'run'
+    id 'java'
+
+    // Plugin esențial pentru gestionarea dependențelor JavaFX
+    id 'org.openjfx.javafxplugin' version '0.1.0' // Asigură-te că folosești o versiune stabilă
+}
+
+group = 'com.ubb.socialnetwork'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+// 1. Configurarea Java
+java {
+    toolchain {
+        // Asigură-te că versiunea corespunde JDK-ului instalat (ex: 21)
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+// 2. Configurarea JavaFX
+javafx {
+    version = "21.0.9" // Trebuie să corespundă versiunii dorite
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base' ]
+    // Am adăugat graphics și base pentru siguranță
+}
+
+// 3. Dependențele Proiectului
+dependencies {
+    // Dependența JDBC pentru PostgreSQL (Baza de Date)
+    implementation 'org.postgresql:postgresql:42.7.3'
+
+    // Dependențe de testare (JUnit Jupiter)
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+// 4. Configurarea Task-urilor de Rulare (Modular JFX)
+
+application {
+    // CRITIC: Specifică modulul principal (din module-info.java)
+    mainModule = 'com.ubb'
+    // Setează clasa principală care extinde javafx.application.Application
+    mainClass = 'com.ubb.MainFX'
+}
+
+// Task: Rulare Consola CLI (com.ubb.Main)
+tasks.register('runConsole', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.ubb.Main'
+    standardInput = System.in // Permite citirea din consolă
+}
+
+// 5. Configurarea Testelor
+tasks.named('test', Test) {
+    useJUnitPlatform()
+}

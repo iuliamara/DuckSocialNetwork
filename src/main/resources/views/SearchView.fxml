@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.ubb.gui.SearchController" style="-fx-background-color: #ecf0f1;">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="🔍 Descopera utilizatori noi" textFill="#2c3e50">
+        <font><Font name="System Bold" size="24.0"/></font>
+    </Label>
+
+    <HBox spacing="10.0" alignment="CENTER_LEFT">
+        <TextField fx:id="txtSearch" promptText="Introdu numele sau prenumele..."
+                   prefHeight="40.0" HBox.hgrow="ALWAYS"
+                   style="-fx-background-radius: 20; -fx-padding: 0 15 0 15;"/>
+    </HBox>
+
+    <ListView fx:id="usersListView" VBox.vgrow="ALWAYS"
+              style="-fx-background-radius: 10; -fx-border-color: #bdc3c7; -fx-border-radius: 10;"/>
+
+    <HBox alignment="CENTER_RIGHT">
+        <Button fx:id="btnShowProfile" text="👤 Vezi Profil Detaliat" onAction="#handleShowProfile"
+                prefHeight="45.0" prefWidth="200.0"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-cursor: hand;"/>
+    </HBox>
+</VBox>

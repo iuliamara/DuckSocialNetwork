@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<HBox prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ubb.gui.ProfileController">
+    <children>
+        <VBox alignment="TOP_CENTER" minWidth="400.0" prefWidth="400.0" spacing="20.0" style="-fx-border-color: #ecf0f1; -fx-border-width: 0 1 0 0;">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+            <children>
+                <ImageView fx:id="profileImageView" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
+
+                <VBox alignment="CENTER" spacing="5.0">
+                    <children>
+                        <Label fx:id="lblFullName" style="-fx-font-weight: bold; -fx-font-size: 22px;" text="\@username" textAlignment="CENTER" wrapText="true" />
+                        <Label fx:id="lblUsername" visible="false" managed="false" text="\@username" textFill="#7f8c8d" />
+                        <Label fx:id="lblType" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 3 15; -fx-background-radius: 15; -fx-font-weight: bold;" text="TIP USER" />
+                    </children>
+                </VBox>
+
+                <Separator prefWidth="200.0" />
+
+                <VBox fx:id="customAttributesContainer" alignment="CENTER" spacing="10.0" style="-fx-background-color: #f9f9f9; -fx-padding: 15; -fx-background-radius: 10;">
+                    <children>
+                        <Label text="DETALII SPECIFICE" textFill="#95a5a6" style="-fx-font-size: 10px; -fx-font-weight: bold;" />
+                    </children>
+                </VBox>
+
+                <Label fx:id="lblEmail" text="email@exemplu.com" textFill="#34495e" />
+
+                <Region VBox.vgrow="ALWAYS" />
+
+                <VBox spacing="10.0">
+                    <children>
+                        <HBox fx:id="requestActionsContainer" spacing="10.0" alignment="CENTER" visible="false" managed="false">
+                            <children>
+                                <Button onAction="#onAcceptRequest" HBox.hgrow="ALWAYS" maxWidth="Infinity" prefHeight="40.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20;" text="Acceptă" />
+                                <Button onAction="#onRejectRequest" HBox.hgrow="ALWAYS" maxWidth="Infinity" prefHeight="40.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20;" text="Respinge" />
+                            </children>
+                        </HBox>
+
+                        <Button fx:id="btnAddFriend" maxWidth="1.7976931348623157E308" onAction="#onAddFriendAction" prefHeight="40.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20;" text="➕ Adaugă Prieten" />
+                        <Button fx:id="btnChangePicture" maxWidth="1.7976931348623157E308" onAction="#onChangePicture" prefHeight="40.0" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-background-radius: 20;" text="📷 Schimbă Poza" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+
+        <VBox spacing="15.0" HBox.hgrow="ALWAYS" style="-fx-background-color: #fcfcfc;">
+            <padding>
+                <Insets bottom="30.0" left="25.0" right="25.0" top="30.0" />
+            </padding>
+            <children>
+                <Label style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Prieteni" textFill="#2c3e50" />
+                <TextField fx:id="txtSearchFriends" promptText="Caută în prieteni..." style="-fx-background-radius: 15; -fx-padding: 8 15;" />
+                <ListView fx:id="friendsListView" VBox.vgrow="ALWAYS" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: white; -fx-border-color: #ecf0f1;" />
+            </children>
+        </VBox>
+    </children>
+</HBox>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.ubb.gui.AdminController">
+
+    <top>
+        <Label text="Panou Administrator" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-padding: 15;" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+
+            <Tab text="Statistici Retea">
+                <content>
+                    <fx:include fx:id="tabHome" source="HomeView.fxml" />
+                </content>
+            </Tab>
+
+            <Tab text="Utilizatori">
+                <content>
+                    <AnchorPane>
+                        <fx:include fx:id="tabUseri" source="UserView.fxml" />
+                    </AnchorPane>
+                </content>
+            </Tab>
+
+            <Tab text="Prietenii">
+                <content>
+                    <AnchorPane>
+                        <fx:include fx:id="tabPrietenii" source="FriendshipView.fxml" />
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="Gestiune Curse">
+                <content>
+                    <AnchorPane>
+                        <fx:include fx:id="tabRace" source="RaceCDView.fxml" />
+                    </AnchorPane>
+                </content>
+            </Tab>
+
+        </TabPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:controller="com.ubb.gui.HomeController"
+      alignment="TOP_CENTER" spacing="15.0"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0" />
+    </padding>
+
+    <Label fx:id="titleLabel" text="Duck Social Network - Statistici" textFill="#2c3e50">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <Separator prefWidth="200.0" />
+
+    <ImageView fx:id="duckImageView" fitHeight="250.0" fitWidth="250.0" preserveRatio="true" />
+
+    <VBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-padding: 15; -fx-background-color: #f8f9fa; -fx-background-radius: 10; -fx-border-color: #dee2e6; -fx-border-radius: 10;">
+        <Label style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Dashboard Retea:" />
+
+        <HBox spacing="10">
+            <Label fx:id="lblTotalUsers" text="Total Utilizatori: Se incarca..." style="-fx-text-fill: #2980b9; -fx-font-weight: bold;"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Label fx:id="lblTotalFriendships" text="Total Prietenii: Se incarca..." style="-fx-text-fill: #27ae60; -fx-font-weight: bold;"/>
+        </HBox>
+
+        <Separator />
+
+        <Label fx:id="communitiesCountLabel" text="Numar de Comunitati: Se incarca..." />
+        <Label fx:id="longestPathLengthLabel" text="Cea mai sociabila comunitate: Se calculeaza..." />
+        <Label fx:id="longestPathUsersLabel" wrapText="true" text="Membri: -" style="-fx-font-style: italic;" />
+    </VBox>
+
+    <Region VBox.vgrow="ALWAYS" />
+
+    <Label fx:id="statusLabel" text="Sincronizat cu baza de date" style="-fx-font-size: 10px; -fx-text-fill: #bdc3c7;" />
+
+</VBox>
